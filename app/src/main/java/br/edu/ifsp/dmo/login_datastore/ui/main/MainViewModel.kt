@@ -5,8 +5,10 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
 import br.edu.ifsp.dmo.login_datastore.data.DataStoreRepository
 import br.edu.ifsp.dmo.login_datastore.data.User
+import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -31,6 +33,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun savePreferences(email: String, passwd: Long, saveLogin: Boolean, stayLoggedIn: Boolean) {
-
+        viewModelScope.launch {
+            repository.savePreferences(email, passwd, saveLogin, stayLoggedIn)
+        }
     }
 }
