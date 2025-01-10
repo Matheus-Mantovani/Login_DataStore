@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Login_DataStore</string>
+    <string name="preencha_todos_os_dados">Preencha todos os dados.</string>
+    <string name="erro_ao_fazer_login">Erro ao fazer login.</string>
+    <string name="bem_vindo">Bem-Vindo</string>
+    <string name="logout">Logout</string>
+    <string name="senha">Senha</string>
+    <string name="salvar_dados_de_login">Salvar dados de login</string>
+    <string name="manter_logado">Manter logado</string>
+    <string name="entrar">Entrar</string>
+    <string name="e_mail">E-mail</string>
 </resources>

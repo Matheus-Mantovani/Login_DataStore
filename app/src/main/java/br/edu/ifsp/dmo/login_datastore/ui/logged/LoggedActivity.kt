@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import br.edu.ifsp.dmo.login_datastore.R
 import br.edu.ifsp.dmo.login_datastore.databinding.ActivityLoggedBinding
 import br.edu.ifsp.dmo.login_datastore.ui.main.MainActivity
 
@@ -18,7 +19,7 @@ class LoggedActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel = ViewModelProvider(this).get(LoggedViewModel::class.java)
-        binding.textMessage.text = "Bem-Vindo"
+        binding.textMessage.text = getString(R.string.bem_vindo)
 
         setupObservers()
         setupListeners()
