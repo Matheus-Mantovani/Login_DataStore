@@ -3,14 +3,9 @@ package br.edu.ifsp.dmo.login_datastore.ui.main
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import br.edu.ifsp.dmo.login_datastore.R
 import br.edu.ifsp.dmo.login_datastore.databinding.ActivityMainBinding
 import br.edu.ifsp.dmo.login_datastore.ui.logged.LoggedActivity
 
@@ -72,7 +67,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun handleLogin() {
         val email = binding.textEmail.text.toString()
-        val passwd = binding.textPassword.text.toString().toLong()
+        //nao sei se isso q eu fiz é algum tipo de gambiarra, mas tive q fazer pois quando eu deslogava, e clicava em logar novamente sem preencher nenhum dado, dava erro pq tentava conveter uma string vazia em Long
+        //val passwd = binding.textPassword.text.toString().toLong() //estava dessa maneira anteriormente
+        val passwd = binding.textPassword.text.toString().toLongOrNull() ?: 0L
         val saveLogin = binding.checkboxSaveLogin.isChecked
         val stayLoggedIn = binding.checkboxStayLoggedin.isChecked
 
